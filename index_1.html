@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Щодня — один готовий матеріал для шкільного психолога: форми, робочі аркуші, конспекти, таблиці-обробники. Безкоштовно, в Telegram.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Практичний психолог з Е-портфелем">
+<meta property="og:description" content="Щодня — один готовий матеріал для шкільного психолога: форми, робочі аркуші, конспекти, таблиці-обробники. Безкоштовно, в Telegram.">
+<meta property="og:image" content="photo.jpg">
+<meta name="theme-color" content="#0D0D0D">
+<title>Практичний психолог з Е-портфелем</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #FF3D5A;
+    --accent2: #FFD600;
+    --dark: #0D0D0D;
+    --mid: #1A1A2E;
+    --surface: #16213E;
+    --card: #1E2A45;
+    --text: #F0F0F0;
+    --muted: #8892AA;
+    --tg: #2AABEE;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .blob1 { width: 500px; height: 500px; background: rgba(255,61,90,0.18); top: -100px; right: -100px; }
+  .blob2 { width: 350px; height: 350px; background: rgba(255,214,0,0.12); bottom: 0; left: -80px; }
+  .blob3 { width: 250px; height: 250px; background: rgba(42,171,238,0.1); top: 40%; right: 20%; }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(255,61,90,0.15);
+    border: 1px solid rgba(255,61,90,0.4);
+    color: var(--accent);
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 span.red { color: var(--accent); }
+  h1 span.yellow { color: var(--accent2); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 40px rgba(255,61,90,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(255,61,90,0.55); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+  .tg-icon { width: 20px; height: 20px; }
+
+  /* STATS */
+  .stats {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent2);
+    display: block;
+  }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* SECTION */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  h2 em { font-style: normal; color: var(--accent2); }
+
+  .section-lead {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 3rem;
+  }
+
+  /* PROBLEMS */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .problem-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .problem-card:hover { border-color: rgba(255,61,90,0.3); }
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .problem-emoji { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+  .problem-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .problem-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* WHAT YOU GET */
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 2rem;
+    background: var(--card);
+    transition: background 0.2s;
+  }
+  .benefit-item:hover { background: #1f2f50; }
+
+  .benefit-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 24px;
+    padding-top: 4px;
+  }
+
+  .benefit-text h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .benefit-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+  /* WHO IS THIS FOR */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .who-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .who-card:hover { transform: translateY(-4px); border-color: rgba(255,214,0,0.3); }
+  .who-icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+  .who-label { font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+
+  /* AUTHOR */
+  .author-block {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 24px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .author-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .author-name { font-family: 'Unbounded', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .author-role { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; }
+  .author-bio { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+  .author-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.2rem; }
+  .tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* CTA FINAL */
+  .cta-section {
+    text-align: center;
+    padding: 5rem 2rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(255,61,90,0.12), rgba(255,214,0,0.06));
+    border: 1px solid rgba(255,61,90,0.2);
+    border-radius: 32px;
+    padding: 4rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .cta-box h2 { margin-bottom: 1rem; }
+  .cta-box p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; }
+
+  .price-badge {
+    display: inline-block;
+    background: var(--accent2);
+    color: #0D0D0D;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 24px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .author-block { grid-template-columns: 1fr; text-align: center; }
+    .author-tags { justify-content: center; }
+    .author-avatar { margin: 0 auto; }
+  }
+
+
+  /* SAMPLES */
+  .samples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .sample-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .sample-card:hover { border-color: rgba(255,214,0,0.3); transform: translateY(-3px); }
+  .sample-type {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.6rem;
+  }
+  .sample-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+  .sample-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
+  .sample-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 3px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* REVIEWS */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .review-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .review-stars { color: var(--accent2); font-size: 1rem; letter-spacing: 2px; }
+  .review-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; font-style: italic; flex: 1; }
+  .review-author { display: flex; align-items: center; gap: 0.75rem; }
+  .review-initials {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .review-name { font-weight: 600; font-size: 0.9rem; }
+  .review-role { font-size: 0.8rem; color: var(--muted); }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
+
+  <div class="hero-inner">
+    <div style="width:90px; height:90px; margin: 0 auto 1.5rem; border-radius:50%; overflow:hidden; border: 2px solid rgba(255,214,0,0.4); box-shadow: 0 0 30px rgba(255,214,0,0.2);">
+      <img src="photo.jpg" alt="Людмила Гобова — автор каналу" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    
+    <div class="badge">Telegram-канал · Шкільна психологія · НУШ</div>
+    <h1>
+      Практичний<br>
+      психолог <span class="red">з</span><br>
+      <span class="yellow">Е-портфелем</span>
+    </h1>
+    <p class="hero-sub">
+      Щодня — один готовий матеріал для шкільного психолога: форми, конспекти, таблиці, робочі аркуші та кейси у форматі НУШ.
+    </p>
+    <div class="cta-group">
+      <a href="https://t.me/gobovaluzp" class="btn-primary">
+        <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.41 13.17l-2.93-.916c-.637-.2-.652-.637.136-.943l11.44-4.41c.53-.194.994.13.838.92z"/></svg>
+        Приєднатись до каналу
+      </a>
+      <a href="https://www.facebook.com/groups/EDgobovalu?locale=uk_UA" class="btn-secondary" target="_blank" rel="noopener">
+        Група у Facebook
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-num">2 662</span>
+        <span class="stat-label">підписники каналу</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1 080</span>
+        <span class="stat-label">учасників чату «Обговорення»</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMS -->
+<section class="reveal">
+  <div class="section-tag">Проблема</div>
+  <h2>Впізнаєш <em>себе?</em></h2>
+  <p class="section-lead">Ти шкільний психолог, у тебе є досвід і знання — але готових матеріалів постійно не вистачає, а часу на розробку з нуля майже немає.</p>
+
+  <div class="problems-grid">
+    <div class="problem-card">
+      <span class="problem-emoji">⏳</span>
+      <div class="problem-title">Нема часу на розробку</div>
+      <div class="problem-desc">Між групами, журналами й нарадами — де взяти час на якісний конспект?</div>
+    </div>
+    <div class="problem-card">
+      <span class="problem-emoji">📂</span>
+      <div class="problem-title">Матеріали розпорошені</div>
+      <div class="problem-desc">Аркуші, форми, таблиці — все в різних папках, незручно знаходити.</div>
+    </div>
+    <div class="problem-card">
+      <span class="problem-emoji">🔁</span>
+      <div class="problem-title">Усе доводиться робити самій</div>
+      <div class="problem-desc">Немає готових шаблонів під НУШ — доводиться адаптувати чужі або придумувати з нуля.</div>
+    </div>
+    <div class="problem-card">
+      <span class="problem-emoji">😮‍💨</span>
+      <div class="problem-title">Вигорання від рутини</div>
+      <div class="problem-desc">Методична робота їсть сили, які потрібні для роботи з дітьми.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section id="about" class="reveal">
+  <div class="section-tag">Що в каналі</div>
+  <div class="divider"></div>
+  <h2>Що виходить у каналі<br><em>майже щодня</em></h2>
+  <p class="section-lead">Нові матеріали з'являються регулярно, майже щодня. Бери і використовуй.</p>
+
+  <div class="benefits-list">
+    <div class="benefit-item">
+      <span class="benefit-num">01</span>
+      <div class="benefit-text">
+        <h3>Форма</h3>
+        <p>Анкети, бланки спостереження, чеклісти, діагностичні форми — у DOCX або Google Docs, готові до друку на A4.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">02</span>
+      <div class="benefit-text">
+        <h3>Робочий аркуш</h3>
+        <p>Психоедукаційні та практичні вправи для групової або індивідуальної роботи з учнями, батьками або педагогами.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">03</span>
+      <div class="benefit-text">
+        <h3>Конспект заняття</h3>
+        <p>Готова тренінгова програма або заняття з чіткою структурою: ідея → вправа → обговорення.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">04</span>
+      <div class="benefit-text">
+        <h3>Таблиця / обробник</h3>
+        <p>XLSX або Google Sheets із формулами для обробки результатів опитувань — з вкладками Data, Scoring, Summary.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">05</span>
+      <div class="benefit-text">
+        <h3>Пакет / кейс</h3>
+        <p>Комплексний матеріал: тематичний блок, Canva-шаблон або HTML-гра для інтерактивної роботи з підлітками.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="reveal">
+  <div class="section-tag">Для кого</div>
+  <h2>Це твоє, якщо ти —</h2>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <span class="who-icon">🏫</span>
+      <div class="who-label">Шкільний психолог у системі НУШ</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">📋</span>
+      <div class="who-label">Методист або практичний психолог</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🧒</span>
+      <div class="who-label">Працюєш з підлітками або молодшими школярами</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">👨‍👩‍👧</span>
+      <div class="who-label">Проводиш групи для батьків або педагогів</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🛡️</span>
+      <div class="who-label">Займаєшся профілактикою: булінг, тривога, криза</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SAMPLES -->
+<section class="reveal">
+  <div class="section-tag">Приклади матеріалів</div>
+  <h2>Що вже є<br><em>в каналі</em></h2>
+  <p class="section-lead">Приклади того, що виходить у каналі.</p>
+
+  <div class="samples-grid">
+    <div class="sample-card">
+      <div class="sample-type">Опитування</div>
+      <div class="sample-title">Опитування: стрес перед контрольними</div>
+      <div class="sample-desc">Опитування для учнів про те, як вони переживають стрес перед контрольними роботами.</div>
+      <div class="sample-tag">Діагностика</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Таблиця · XLSX</div>
+      <div class="sample-title">Обробник тривожності за Філіпсом</div>
+      <div class="sample-desc">Google Sheets з автоматичним підрахунком балів по 8 шкалах, інтерпретацією та груповим Summary для класу.</div>
+      <div class="sample-tag">Діагностика</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Конспект · Тренінг</div>
+      <div class="sample-title">«Провал — це досвід»</div>
+      <div class="sample-desc">Заняття для підлітків про помилки та стійкість. Включає інтерактивну HTML-гру, вправи й обговорення.</div>
+      <div class="sample-tag">8–10 клас</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Робочий аркуш · Canva</div>
+      <div class="sample-title">«Мої ресурси» — колесо балансу</div>
+      <div class="sample-desc">Мінімалістичний шаблон для роботи з ресурсним станом учня. Нейтральний стиль, не стигматизуючий.</div>
+      <div class="sample-tag">Емоційна регуляція</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Чекліст · PDF</div>
+      <div class="sample-title">Ознаки булінгу: спостереження</div>
+      <div class="sample-desc">Бланк для педагога або психолога — фіксація ознак булінгу в класі з шкалою частоти і рекомендаціями.</div>
+      <div class="sample-tag">Профілактика</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Пакет · Кейс</div>
+      <div class="sample-title">Тематичний блок «Самооцінка підлітка»</div>
+      <div class="sample-desc">Березневий блок з 4 занять: діагностика → психоедукація → вправи → рефлексія. Повний комплект матеріалів.</div>
+      <div class="sample-tag">Березень 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="reveal">
+  <div class="section-tag">Спільнота</div>
+  <h2>Маєш власну розробку?<br><em>Поділись нею</em></h2>
+  <p class="section-lead">Канал — це не лише мої матеріали. У Facebook-групі колеги діляться власними напрацюваннями, питають і відповідають одне одному.</p>
+  <div class="cta-group" style="justify-content:flex-start;">
+    <a href="https://www.facebook.com/groups/EDgobovalu?locale=uk_UA" class="btn-secondary" target="_blank" rel="noopener">
+      <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+      Група у Facebook
+    </a>
+  </div>
+</section>
+
+
+<!-- AUTHOR -->
+<section class="reveal">
+  <div class="section-tag">Автор</div>
+  <div class="author-block">
+    <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="photo.jpg" alt="Людмила Гобова" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div>
+      <div class="author-name">Гобова Людмила</div>
+      <div class="author-role">Практичний психолог · Автор каналу</div>
+      <p class="author-bio">
+        Багато років працювала практичним психологом у школі — з дітьми всіх вікових груп. Тепер, на пенсії, збираю напрацювання у власному електронному портфелі й ділюся ними з колегами: опитувальники з обробниками в Excel, робочі аркуші, конспекти занять, ігри, рекомендації для педагогів і батьків.<br><br>
+        Мета каналу — жива взаємодія колег, а не кількість підписників: бери матеріал, пробуй у роботі і розкажи, що спрацювало.
+      </p>
+      <div class="author-tags">
+        <span class="tag">НУШ</span>
+        <span class="tag">Шкільна психологія</span>
+        <span class="tag">Підліткова робота</span>
+        <span class="tag">Профілактика булінгу</span>
+        <span class="tag">Тривожність</span>
+        <span class="tag">Емоційна регуляція</span>
+        <span class="tag">Інклюзія</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="cta-section reveal">
+  <div class="cta-box">
+    <div class="price-badge">Безкоштовно</div>
+    <h2>Готова отримати перший матеріал?</h2>
+    <p>Приєднуйся до 2 662 колег у каналі — і вже сьогодні знайдеш готові матеріали для роботи.</p>
+    <a href="https://t.me/gobovaluzp" class="btn-primary" style="font-size: 1.05rem; padding: 18px 40px;">
+      <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.41 13.17l-2.93-.916c-.637-.2-.652-.637.136-.943l11.44-4.41c.53-.194.994.13.838.92z"/></svg>
+      Приєднатись до Telegram
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Практичний психолог з Е-портфелем · Telegram-канал · <a href="https://www.facebook.com/groups/EDgobovalu?locale=uk_UA" style="color:inherit;">Група у Facebook</a></p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>
