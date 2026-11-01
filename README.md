@@ -1,0 +1,730 @@
+[index.html](https://github.com/user-attachments/files/34235791/index.html)
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Щодня — один готовий матеріал для шкільного психолога: форми, робочі аркуші, конспекти, таблиці-обробники. Безкоштовно, в Telegram.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Практичний психолог з Е-портфелем">
+<meta property="og:description" content="Щодня — один готовий матеріал для шкільного психолога: форми, робочі аркуші, конспекти, таблиці-обробники. Безкоштовно, в Telegram.">
+<meta property="og:image" content="photo.jpg">
+<meta name="theme-color" content="#0D0D0D">
+<title>Практичний психолог з Е-портфелем</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #FF3D5A;
+    --accent2: #FFD600;
+    --dark: #0D0D0D;
+    --mid: #1A1A2E;
+    --surface: #16213E;
+    --card: #1E2A45;
+    --text: #F0F0F0;
+    --muted: #8892AA;
+    --tg: #2AABEE;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+  }
+
+  .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .blob1 { width: 500px; height: 500px; background: rgba(255,61,90,0.18); top: -100px; right: -100px; }
+  .blob2 { width: 350px; height: 350px; background: rgba(255,214,0,0.12); bottom: 0; left: -80px; }
+  .blob3 { width: 250px; height: 250px; background: rgba(42,171,238,0.1); top: 40%; right: 20%; }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .badge {
+    display: inline-block;
+    background: rgba(255,61,90,0.15);
+    border: 1px solid rgba(255,61,90,0.4);
+    color: var(--accent);
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(2.4rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 span.red { color: var(--accent); }
+  h1 span.yellow { color: var(--accent2); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 16px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 40px rgba(255,61,90,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 60px rgba(255,61,90,0.55); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+  .tg-icon { width: 20px; height: 20px; }
+
+  /* STATS */
+  .stats {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .stat-item { text-align: center; }
+  .stat-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent2);
+    display: block;
+  }
+  .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* SECTION */
+  section {
+    position: relative;
+    z-index: 1;
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+  h2 em { font-style: normal; color: var(--accent2); }
+
+  .section-lead {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 3rem;
+  }
+
+  /* PROBLEMS */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+
+  .problem-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .problem-card:hover { border-color: rgba(255,61,90,0.3); }
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+  }
+
+  .problem-emoji { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+  .problem-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .problem-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+  /* WHAT YOU GET */
+  .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem 2rem;
+    background: var(--card);
+    transition: background 0.2s;
+  }
+  .benefit-item:hover { background: #1f2f50; }
+
+  .benefit-num {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 24px;
+    padding-top: 4px;
+  }
+
+  .benefit-text h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.3rem; }
+  .benefit-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+  /* WHO IS THIS FOR */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .who-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .who-card:hover { transform: translateY(-4px); border-color: rgba(255,214,0,0.3); }
+  .who-icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+  .who-label { font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+
+  /* AUTHOR */
+  .author-block {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 24px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .author-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .author-name { font-family: 'Unbounded', sans-serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .author-role { color: var(--accent); font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; }
+  .author-bio { font-size: 0.95rem; color: var(--muted); line-height: 1.7; }
+
+  .author-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.2rem; }
+  .tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* CTA FINAL */
+  .cta-section {
+    text-align: center;
+    padding: 5rem 2rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cta-box {
+    background: linear-gradient(135deg, rgba(255,61,90,0.12), rgba(255,214,0,0.06));
+    border: 1px solid rgba(255,61,90,0.2);
+    border-radius: 32px;
+    padding: 4rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .cta-box h2 { margin-bottom: 1rem; }
+  .cta-box p { color: var(--muted); margin-bottom: 2rem; font-size: 1rem; }
+
+  .price-badge {
+    display: inline-block;
+    background: var(--accent2);
+    color: #0D0D0D;
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 24px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .author-block { grid-template-columns: 1fr; text-align: center; }
+    .author-tags { justify-content: center; }
+    .author-avatar { margin: 0 auto; }
+  }
+
+
+  /* SAMPLES */
+  .samples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .sample-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .sample-card:hover { border-color: rgba(255,214,0,0.3); transform: translateY(-3px); }
+  .sample-type {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 0.6rem;
+  }
+  .sample-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; line-height: 1.4; }
+  .sample-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
+  .sample-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 3px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* REVIEWS */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+  .review-card {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .review-stars { color: var(--accent2); font-size: 1rem; letter-spacing: 2px; }
+  .review-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; font-style: italic; flex: 1; }
+  .review-author { display: flex; align-items: center; gap: 0.75rem; }
+  .review-initials {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Unbounded', sans-serif; font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .review-name { font-weight: 600; font-size: 0.9rem; }
+  .review-role { font-size: 0.8rem; color: var(--muted); }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
+
+  <div class="hero-inner">
+    <div style="width:90px; height:90px; margin: 0 auto 1.5rem; border-radius:50%; overflow:hidden; border: 2px solid rgba(255,214,0,0.4); box-shadow: 0 0 30px rgba(255,214,0,0.2);">
+      <img src="data:image/jpeg;base64,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" alt="Людмила Гобова — автор каналу" style="width:100%; height:100%; object-fit:cover;">
+    </div>
+    
+    <div class="badge">Telegram-канал · Шкільна психологія · НУШ</div>
+    <h1>
+      Практичний<br>
+      психолог <span class="red">з</span><br>
+      <span class="yellow">Е-портфелем</span>
+    </h1>
+    <p class="hero-sub">
+      Щодня — один готовий матеріал для шкільного психолога: форми, конспекти, таблиці, робочі аркуші та кейси у форматі НУШ.
+    </p>
+    <div class="cta-group">
+      <a href="https://t.me/gobovaluzp" class="btn-primary">
+        <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.41 13.17l-2.93-.916c-.637-.2-.652-.637.136-.943l11.44-4.41c.53-.194.994.13.838.92z"/></svg>
+        Приєднатись до каналу
+      </a>
+      <a href="https://www.facebook.com/groups/EDgobovalu?locale=uk_UA" class="btn-secondary" target="_blank" rel="noopener">
+        Група у Facebook
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-num">2 662</span>
+        <span class="stat-label">підписники каналу</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1 080</span>
+        <span class="stat-label">учасників чату «Обговорення»</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEMS -->
+<section class="reveal">
+  <div class="section-tag">Проблема</div>
+  <h2>Впізнаєш <em>себе?</em></h2>
+  <p class="section-lead">Ти шкільний психолог, у тебе є досвід і знання — але готових матеріалів постійно не вистачає, а часу на розробку з нуля майже немає.</p>
+
+  <div class="problems-grid">
+    <div class="problem-card">
+      <span class="problem-emoji">⏳</span>
+      <div class="problem-title">Нема часу на розробку</div>
+      <div class="problem-desc">Між групами, журналами й нарадами — де взяти час на якісний конспект?</div>
+    </div>
+    <div class="problem-card">
+      <span class="problem-emoji">📂</span>
+      <div class="problem-title">Матеріали розпорошені</div>
+      <div class="problem-desc">Аркуші, форми, таблиці — все в різних папках, незручно знаходити.</div>
+    </div>
+    <div class="problem-card">
+      <span class="problem-emoji">🔁</span>
+      <div class="problem-title">Усе доводиться робити самій</div>
+      <div class="problem-desc">Немає готових шаблонів під НУШ — доводиться адаптувати чужі або придумувати з нуля.</div>
+    </div>
+    <div class="problem-card">
+      <span class="problem-emoji">😮‍💨</span>
+      <div class="problem-title">Вигорання від рутини</div>
+      <div class="problem-desc">Методична робота їсть сили, які потрібні для роботи з дітьми.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section id="about" class="reveal">
+  <div class="section-tag">Що в каналі</div>
+  <div class="divider"></div>
+  <h2>Що виходить у каналі<br><em>майже щодня</em></h2>
+  <p class="section-lead">Нові матеріали з'являються регулярно, майже щодня. Бери і використовуй.</p>
+
+  <div class="benefits-list">
+    <div class="benefit-item">
+      <span class="benefit-num">01</span>
+      <div class="benefit-text">
+        <h3>Форма</h3>
+        <p>Анкети, бланки спостереження, чеклісти, діагностичні форми — у DOCX або Google Docs, готові до друку на A4.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">02</span>
+      <div class="benefit-text">
+        <h3>Робочий аркуш</h3>
+        <p>Психоедукаційні та практичні вправи для групової або індивідуальної роботи з учнями, батьками або педагогами.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">03</span>
+      <div class="benefit-text">
+        <h3>Конспект заняття</h3>
+        <p>Готова тренінгова програма або заняття з чіткою структурою: ідея → вправа → обговорення.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">04</span>
+      <div class="benefit-text">
+        <h3>Таблиця / обробник</h3>
+        <p>XLSX або Google Sheets із формулами для обробки результатів опитувань — з вкладками Data, Scoring, Summary.</p>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <span class="benefit-num">05</span>
+      <div class="benefit-text">
+        <h3>Пакет / кейс</h3>
+        <p>Комплексний матеріал: тематичний блок, Canva-шаблон або HTML-гра для інтерактивної роботи з підлітками.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS THIS FOR -->
+<section class="reveal">
+  <div class="section-tag">Для кого</div>
+  <h2>Це твоє, якщо ти —</h2>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <span class="who-icon">🏫</span>
+      <div class="who-label">Шкільний психолог у системі НУШ</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">📋</span>
+      <div class="who-label">Методист або практичний психолог</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🧒</span>
+      <div class="who-label">Працюєш з підлітками або молодшими школярами</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">👨‍👩‍👧</span>
+      <div class="who-label">Проводиш групи для батьків або педагогів</div>
+    </div>
+    <div class="who-card">
+      <span class="who-icon">🛡️</span>
+      <div class="who-label">Займаєшся профілактикою: булінг, тривога, криза</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SAMPLES -->
+<section class="reveal">
+  <div class="section-tag">Приклади матеріалів</div>
+  <h2>Що вже є<br><em>в каналі</em></h2>
+  <p class="section-lead">Приклади того, що виходить у каналі.</p>
+
+  <div class="samples-grid">
+    <div class="sample-card">
+      <div class="sample-type">Опитування</div>
+      <div class="sample-title">Опитування: стрес перед контрольними</div>
+      <div class="sample-desc">Опитування для учнів про те, як вони переживають стрес перед контрольними роботами.</div>
+      <div class="sample-tag">Діагностика</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Таблиця · XLSX</div>
+      <div class="sample-title">Обробник тривожності за Філіпсом</div>
+      <div class="sample-desc">Google Sheets з автоматичним підрахунком балів по 8 шкалах, інтерпретацією та груповим Summary для класу.</div>
+      <div class="sample-tag">Діагностика</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Конспект · Тренінг</div>
+      <div class="sample-title">«Провал — це досвід»</div>
+      <div class="sample-desc">Заняття для підлітків про помилки та стійкість. Включає інтерактивну HTML-гру, вправи й обговорення.</div>
+      <div class="sample-tag">8–10 клас</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Робочий аркуш · Canva</div>
+      <div class="sample-title">«Мої ресурси» — колесо балансу</div>
+      <div class="sample-desc">Мінімалістичний шаблон для роботи з ресурсним станом учня. Нейтральний стиль, не стигматизуючий.</div>
+      <div class="sample-tag">Емоційна регуляція</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Чекліст · PDF</div>
+      <div class="sample-title">Ознаки булінгу: спостереження</div>
+      <div class="sample-desc">Бланк для педагога або психолога — фіксація ознак булінгу в класі з шкалою частоти і рекомендаціями.</div>
+      <div class="sample-tag">Профілактика</div>
+    </div>
+    <div class="sample-card">
+      <div class="sample-type">Пакет · Кейс</div>
+      <div class="sample-title">Тематичний блок «Самооцінка підлітка»</div>
+      <div class="sample-desc">Березневий блок з 4 занять: діагностика → психоедукація → вправи → рефлексія. Повний комплект матеріалів.</div>
+      <div class="sample-tag">Березень 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="reveal">
+  <div class="section-tag">Спільнота</div>
+  <h2>Маєш власну розробку?<br><em>Поділись нею</em></h2>
+  <p class="section-lead">Канал — це не лише мої матеріали. У Facebook-групі колеги діляться власними напрацюваннями, питають і відповідають одне одному.</p>
+  <div class="cta-group" style="justify-content:flex-start;">
+    <a href="https://www.facebook.com/groups/EDgobovalu?locale=uk_UA" class="btn-secondary" target="_blank" rel="noopener">
+      <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971H15.83c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+      Група у Facebook
+    </a>
+  </div>
+</section>
+
+
+<!-- AUTHOR -->
+<section class="reveal">
+  <div class="section-tag">Автор</div>
+  <div class="author-block">
+    <div class="author-avatar" style="overflow:hidden;padding:0;"><img src="data:image/jpeg;base64,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" alt="Людмила Гобова" style="width:100%;height:100%;object-fit:cover;"></div>
+    <div>
+      <div class="author-name">Гобова Людмила</div>
+      <div class="author-role">Практичний психолог · Автор каналу</div>
+      <p class="author-bio">
+        Багато років працювала практичним психологом у школі — з дітьми всіх вікових груп. Тепер, на пенсії, збираю напрацювання у власному електронному портфелі й ділюся ними з колегами: опитувальники з обробниками в Excel, робочі аркуші, конспекти занять, ігри, рекомендації для педагогів і батьків.<br><br>
+        Мета каналу — жива взаємодія колег, а не кількість підписників: бери матеріал, пробуй у роботі і розкажи, що спрацювало.
+      </p>
+      <div class="author-tags">
+        <span class="tag">НУШ</span>
+        <span class="tag">Шкільна психологія</span>
+        <span class="tag">Підліткова робота</span>
+        <span class="tag">Профілактика булінгу</span>
+        <span class="tag">Тривожність</span>
+        <span class="tag">Емоційна регуляція</span>
+        <span class="tag">Інклюзія</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="cta-section reveal">
+  <div class="cta-box">
+    <div class="price-badge">Безкоштовно</div>
+    <h2>Готова отримати перший матеріал?</h2>
+    <p>Приєднуйся до 2 662 колег у каналі — і вже сьогодні знайдеш готові матеріали для роботи.</p>
+    <a href="https://t.me/gobovaluzp" class="btn-primary" style="font-size: 1.05rem; padding: 18px 40px;">
+      <svg class="tg-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.41 13.17l-2.93-.916c-.637-.2-.652-.637.136-.943l11.44-4.41c.53-.194.994.13.838.92z"/></svg>
+      Приєднатись до Telegram
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Практичний психолог з Е-портфелем · Telegram-канал · <a href="https://www.facebook.com/groups/EDgobovalu?locale=uk_UA" style="color:inherit;">Група у Facebook</a></p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => io.observe(r));
+</script>
+</body>
+</html>
