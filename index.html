@@ -464,6 +464,22 @@
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
   .reveal.visible { opacity: 1; transform: none; }
+
+  a.sample-link { display:block; text-decoration:none; color:inherit; transition:border-color .2s, transform .2s; }
+  a.sample-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .sample-open { margin-top:.75rem; font-size:.85rem; font-weight:600; color:var(--accent); }
+
+  .nav-list { display:grid; gap:.75rem; }
+  .nav-cat { background:var(--card); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:0 1.25rem; }
+  .nav-cat summary { cursor:pointer; padding:1rem 0; font-weight:700; list-style:none; display:flex; justify-content:space-between; align-items:center; }
+  .nav-cat summary::-webkit-details-marker { display:none; }
+  .nav-cat summary::after { content:'+'; color:var(--accent); font-size:1.3rem; margin-left:1rem; }
+  .nav-cat[open] summary::after { content:'–'; }
+  .nav-count { margin-left:auto; font-size:.8rem; font-weight:600; color:var(--muted); }
+  .nav-cat ul { list-style:none; padding:0 0 1rem; }
+  .nav-cat li { padding:.45rem 0; border-top:1px solid rgba(255,255,255,0.05); font-size:.95rem; line-height:1.5; }
+  .nav-cat li a { color:var(--text); text-decoration:none; }
+  .nav-cat li a:hover { color:var(--accent2); text-decoration:underline; }
 </style>
 </head>
 <body>
@@ -621,45 +637,145 @@
 <section class="reveal">
   <div class="section-tag">Приклади матеріалів</div>
   <h2>Що вже є<br><em>в каналі</em></h2>
-  <p class="section-lead">Приклади того, що виходить у каналі. Знайти їх можна в каналі за назвою.</p>
+  <p class="section-lead">Приклади того, що виходить у каналі. Повний перелік — нижче, за темами.</p>
 
   <div class="samples-grid">
-    <div class="sample-card">
+    <a class="sample-card sample-link" href="https://t.me/gobovaluzp/1061" target="_blank" rel="noopener">
       <div class="sample-type">Опитування</div>
       <div class="sample-title">Опитування: стрес перед контрольними</div>
       <div class="sample-desc">Опитування для учнів про те, як вони переживають стрес перед контрольними роботами.</div>
       <div class="sample-tag">Діагностика</div>
-    </div>
-    <div class="sample-card">
+    <div class="sample-open">Відкрити в каналі →</div>
+    </a>
+    <a class="sample-card sample-link" href="https://t.me/gobovaluzp/1307" target="_blank" rel="noopener">
       <div class="sample-type">Таблиця · XLSX</div>
       <div class="sample-title">Обробник тривожності за Філіпсом</div>
       <div class="sample-desc">Google Sheets з автоматичним підрахунком балів по 8 шкалах, інтерпретацією та груповим Summary для класу.</div>
       <div class="sample-tag">Діагностика</div>
-    </div>
-    <div class="sample-card">
+    <div class="sample-open">Відкрити в каналі →</div>
+    </a>
+    <a class="sample-card sample-link" href="https://t.me/gobovaluzp/1098" target="_blank" rel="noopener">
       <div class="sample-type">Конспект · Тренінг</div>
       <div class="sample-title">«Провал — це досвід»</div>
       <div class="sample-desc">Заняття для підлітків про помилки та стійкість. Включає інтерактивну HTML-гру, вправи й обговорення.</div>
       <div class="sample-tag">8–10 клас</div>
-    </div>
-    <div class="sample-card">
+    <div class="sample-open">Відкрити в каналі →</div>
+    </a>
+    <a class="sample-card sample-link" href="https://t.me/gobovaluzp/650" target="_blank" rel="noopener">
       <div class="sample-type">Робочий аркуш · Canva</div>
       <div class="sample-title">«Мої ресурси» — колесо балансу</div>
       <div class="sample-desc">Мінімалістичний шаблон для роботи з ресурсним станом учня. Нейтральний стиль, не стигматизуючий.</div>
       <div class="sample-tag">Емоційна регуляція</div>
-    </div>
-    <div class="sample-card">
-      <div class="sample-type">Чекліст · PDF</div>
-      <div class="sample-title">Ознаки булінгу: спостереження</div>
-      <div class="sample-desc">Бланк для педагога або психолога — фіксація ознак булінгу в класі з шкалою частоти і рекомендаціями.</div>
-      <div class="sample-tag">Профілактика</div>
-    </div>
-    <div class="sample-card">
-      <div class="sample-type">Пакет · Кейс</div>
-      <div class="sample-title">Тематичний блок «Самооцінка підлітка»</div>
-      <div class="sample-desc">Березневий блок з 4 занять: діагностика → психоедукація → вправи → рефлексія. Повний комплект матеріалів.</div>
-      <div class="sample-tag">Березень 2026</div>
-    </div>
+    <div class="sample-open">Відкрити в каналі →</div>
+    </a>
+  </div>
+
+  <h3 style="font-family:'Unbounded',sans-serif;font-size:1.1rem;margin:3rem 0 1rem;">Усі матеріали за темами</h3>
+  <p class="section-lead" style="margin-bottom:1.5rem;">Натисни на назву — відкриється допис у каналі.</p>
+  <div class="nav-list">
+    <details class="nav-cat" open>
+      <summary>Нормативка й стратегія <span class="nav-count">8</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1231" target="_blank" rel="noopener">Орієнтири діяльності психслужби 2026/2027 (лист МОН)</a></li>
+        <li><a href="https://t.me/gobovaluzp/1249" target="_blank" rel="noopener">Презентація «Архітектура підтримки та взаємодії»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1250" target="_blank" rel="noopener">Лист МОН № 1/18599-26 про організацію освітнього процесу для дітей з ООП</a></li>
+        <li><a href="https://t.me/gobovaluzp/1251" target="_blank" rel="noopener">«Чек-лист практичного психолога 2026/2027»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1309" target="_blank" rel="noopener">Презентація «Практичний психолог у ЗЗСО на 2026/2027 н. р.»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1289" target="_blank" rel="noopener">Посадова інструкція практичного психолога</a></li>
+        <li><a href="https://t.me/gobovaluzp/1320" target="_blank" rel="noopener">Приклад посадової інструкції соціального педагога</a></li>
+        <li><a href="https://t.me/gobovaluzp/1321" target="_blank" rel="noopener">Презентація «Навігатор професії: соціальний педагог»</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Планування <span class="nav-count">5</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1241" target="_blank" rel="noopener">Конспект для педради про правила роботи психолога</a></li>
+        <li><a href="https://t.me/gobovaluzp/1258" target="_blank" rel="noopener">Річний план практичного психолога</a></li>
+        <li><a href="https://t.me/gobovaluzp/1245" target="_blank" rel="noopener">План роботи на вересень 2026</a></li>
+        <li><a href="https://t.me/gobovaluzp/1268" target="_blank" rel="noopener">План роботи на жовтень</a></li>
+        <li><a href="https://t.me/gobovaluzp/1301" target="_blank" rel="noopener">План роботи на листопад</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Робота з батьками <span class="nav-count">3</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1233" target="_blank" rel="noopener">Форма інформованої згоди батьків</a></li>
+        <li><a href="https://t.me/gobovaluzp/1259" target="_blank" rel="noopener">Виступ «Як допомогти дитині адаптуватися» для батьків 1-х класів</a></li>
+        <li><a href="https://t.me/gobovaluzp/1285" target="_blank" rel="noopener">Дві пам’ятки на одному аркуші — психологу й батькам: індивідуальні заняття з дітьми з ООП під час дистанційного навчання</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Робота з педагогами <span class="nav-count">8</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1235" target="_blank" rel="noopener">Пам’ятка педагогам: межі компетентності</a></li>
+        <li><a href="https://t.me/gobovaluzp/1254" target="_blank" rel="noopener">Форма «Опитування класних керівників»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1256" target="_blank" rel="noopener">Обробник опитування класних керівників</a></li>
+        <li><a href="https://t.me/gobovaluzp/1264" target="_blank" rel="noopener">Консультування педагогів за результатами спостереження</a></li>
+        <li><a href="https://t.me/gobovaluzp/1271" target="_blank" rel="noopener">Консультація для педагогів і класних керівників: як реагувати на труднощі здобувачів освіти</a></li>
+        <li><a href="https://t.me/gobovaluzp/1272" target="_blank" rel="noopener">Відео: як безпечно й ефективно підтримувати учнів у стресових ситуаціях</a></li>
+        <li><a href="https://t.me/gobovaluzp/1282" target="_blank" rel="noopener">Семінар для педагогів — Тиждень психічного здоров’я</a></li>
+        <li><a href="https://t.me/gobovaluzp/1283" target="_blank" rel="noopener">Презентація до семінару «Помітити. Відреагувати. Передати»</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Діагностика й документація <span class="nav-count">8</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1248" target="_blank" rel="noopener">Журнал обліку роботи практичного психолога</a></li>
+        <li><a href="https://t.me/gobovaluzp/1246" target="_blank" rel="noopener">Бланк повідомлення для педагогів і психологів</a></li>
+        <li><a href="https://t.me/gobovaluzp/1260" target="_blank" rel="noopener">Форма соціометричного дослідження</a></li>
+        <li><a href="https://t.me/gobovaluzp/1263" target="_blank" rel="noopener">Шаблон обробника соціометрії</a></li>
+        <li><a href="https://t.me/gobovaluzp/1307" target="_blank" rel="noopener">Тест шкільної тривожності Філіпса: форма й обробник</a></li>
+        <li><a href="https://t.me/gobovaluzp/1300" target="_blank" rel="noopener">Проективна методика «Дерево»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1295" target="_blank" rel="noopener">Анкета для педагогічних працівників (додаток 11) до базового зрізу показника</a></li>
+        <li><a href="https://t.me/gobovaluzp/1061" target="_blank" rel="noopener">Опитування: стрес перед контрольними</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Реагування на кризи <span class="nav-count">2</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1242" target="_blank" rel="noopener">Оновлений порядок реагування на випадки насильства та булінгу</a></li>
+        <li><a href="https://t.me/gobovaluzp/1330" target="_blank" rel="noopener">Підбірка до акції «16 днів проти насильства» — 19 матеріалів</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Заняття з дітьми <span class="nav-count">12</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1261" target="_blank" rel="noopener">Конспект заняття до Міжнародного дня миру</a></li>
+        <li><a href="https://t.me/gobovaluzp/1269" target="_blank" rel="noopener">Індивідуальне корекційно-розвивальне заняття, 1–3 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1270" target="_blank" rel="noopener">Індивідуальне корекційно-розвивальне заняття, 5–9 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1284" target="_blank" rel="noopener">Конспект онлайн-заняття для дітей з ООП (1–4 класи)</a></li>
+        <li><a href="https://t.me/gobovaluzp/1302" target="_blank" rel="noopener">Психоедукаційне заняття з емоційної саморегуляції, 2 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1303" target="_blank" rel="noopener">Психоедукаційне заняття з емоційної саморегуляції, 3 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1306" target="_blank" rel="noopener">Психоедукаційне заняття з емоційної саморегуляції, 4 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1326" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 1–4 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1327" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 5–7 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1328" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 8–11 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1098" target="_blank" rel="noopener">Провал — це досвід</a></li>
+        <li><a href="https://t.me/gobovaluzp/650" target="_blank" rel="noopener">«Мої ресурси»</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Тиждень психічного здоров’я <span class="nav-count">5</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1273" target="_blank" rel="noopener">Матеріали єдиної інформаційної хвилини</a></li>
+        <li><a href="https://t.me/gobovaluzp/1274" target="_blank" rel="noopener">Комплект «Відкриття Тижня психічного здоров’я»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1276" target="_blank" rel="noopener">Групове адресне заняття, 3–4 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1277" target="_blank" rel="noopener">Групове адресне заняття, 5–8 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1278" target="_blank" rel="noopener">Групове заняття, 9–11 клас</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Тиждень безпеки <span class="nav-count">7</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1286" target="_blank" rel="noopener">Відкриття Тижня безпеки: інструктаж і плакати</a></li>
+        <li><a href="https://t.me/gobovaluzp/1297" target="_blank" rel="noopener">Рекомендації до Тижня безпеки</a></li>
+        <li><a href="https://t.me/gobovaluzp/1287" target="_blank" rel="noopener">Заняття Тижня безпеки, 1–4 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1291" target="_blank" rel="noopener">Заняття Тижня безпеки, 4–5 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1292" target="_blank" rel="noopener">Заняття Тижня безпеки, 8–9 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1293" target="_blank" rel="noopener">Два інтерактиви до Тижня безпеки</a></li>
+        <li><a href="https://t.me/gobovaluzp/1294" target="_blank" rel="noopener">Шаблон довідки керівнику за підсумками Тижня безпечної поведінки в укритті</a></li>
+      </ul>
+    </details>
   </div>
 
   <div class="cta-group" style="margin-top:2rem;">
