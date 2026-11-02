@@ -482,6 +482,9 @@
   .nav-cat li a:hover { color:var(--accent2); text-decoration:underline; }
   a.tag { color:#C8D0E0; cursor:pointer; text-decoration:none; transition:border-color .2s, color .2s; }
   a.tag:hover { border-color: var(--accent); color: var(--text); }
+  .nav-controls { display:flex; gap:.75rem; margin-bottom:1rem; flex-wrap:wrap; }
+  .nav-controls button { background:transparent; color:var(--text); border:1px solid rgba(255,255,255,0.2); border-radius:100px; padding:8px 18px; font:600 .85rem 'Manrope',sans-serif; cursor:pointer; }
+  .nav-controls button:hover { border-color:rgba(255,255,255,0.5); }
 </style>
 </head>
 <body>
@@ -668,54 +671,58 @@
       <div class="sample-tag">Діагностика</div>
     <div class="sample-open">Відкрити в каналі →</div>
     </a>
-    <a class="sample-card sample-link" href="https://t.me/gobovaluzp/1098" target="_blank" rel="noopener">
-      <div class="sample-type">Конспект · Тренінг</div>
-      <div class="sample-title">«Провал — це досвід»</div>
-      <div class="sample-desc">Заняття для підлітків про помилки та стійкість. Включає інтерактивну HTML-гру, вправи й обговорення.</div>
-      <div class="sample-tag">8–10 клас</div>
-    <div class="sample-open">Відкрити в каналі →</div>
+    <a class="sample-card sample-link" href="https://t.me/gobovaluzp/1104" target="_blank" rel="noopener">
+      <div class="sample-type">Опитування · Excel</div>
+      <div class="sample-title">Тиждень «Провал — це досвід»</div>
+      <div class="sample-desc">Опитування з 20 запитань про стійкість до невдач (страх помилок, переконання, реакція на невдачу, ставлення до себе) і Excel-обробник: підсумок по класу, індивідуальний протокол, картка для друку.</div>
+      <div class="sample-tag">Діагностика</div>
+      <div class="sample-open">Відкрити в каналі →</div>
     </a>
     <a class="sample-card sample-link" href="https://t.me/gobovaluzp/838" target="_blank" rel="noopener">
-      <div class="sample-type">Робочий аркуш · Canva</div>
-      <div class="sample-title">«Мої ресурси» — колесо балансу</div>
-      <div class="sample-desc">Мінімалістичний шаблон для роботи з ресурсним станом учня. Нейтральний стиль, не стигматизуючий.</div>
-      <div class="sample-tag">Емоційна регуляція</div>
-    <div class="sample-open">Відкрити в каналі →</div>
+      <div class="sample-type">Конспект · заняття</div>
+      <div class="sample-title">Баланс у моєму житті: конспект заняття, 8–11 клас</div>
+      <div class="sample-desc">Мотиваційна історія, аркуш «Колесо особистого добробуту», коротке групове обговорення, індивідуальне планування й дихальна вправа «квадрат».</div>
+      <div class="sample-tag">8–11 клас</div>
+      <div class="sample-open">Відкрити в каналі →</div>
     </a>
   </div>
 
   <h3 style="font-family:'Unbounded',sans-serif;font-size:1.1rem;margin:3rem 0 1rem;">Усі матеріали за темами</h3>
   <p class="section-lead" style="margin-bottom:1.5rem;">Натисни на назву — відкриється допис у каналі.</p>
+  <div class="nav-controls">
+    <button type="button" onclick="document.querySelectorAll('.nav-cat').forEach(d=>d.open=true)">Розгорнути все</button>
+    <button type="button" onclick="document.querySelectorAll('.nav-cat').forEach(d=>d.open=false)">Згорнути все</button>
+  </div>
   <div class="nav-list">
     <details class="nav-cat" open>
-      <summary>Нормативка й стратегія <span class="nav-count">8</span></summary>
+      <summary>Нормативка й стратегія <span class="nav-count">5</span></summary>
       <ul>
-        <li><a href="https://t.me/gobovaluzp/1231" target="_blank" rel="noopener">Орієнтири діяльності психслужби 2026/2027 (лист МОН)</a></li>
+        <li><a href="https://t.me/gobovaluzp/1231" target="_blank" rel="noopener">Орієнтири психслужби 2026/2027 (лист МОН)</a></li>
         <li><a href="https://t.me/gobovaluzp/1249" target="_blank" rel="noopener">Презентація «Архітектура підтримки та взаємодії»</a></li>
-        <li><a href="https://t.me/gobovaluzp/1250" target="_blank" rel="noopener">Лист МОН № 1/18599-26 про організацію освітнього процесу для дітей з ООП</a></li>
-        <li><a href="https://t.me/gobovaluzp/1251" target="_blank" rel="noopener">«Чек-лист практичного психолога 2026/2027»</a></li>
-        <li><a href="https://t.me/gobovaluzp/1309" target="_blank" rel="noopener">Презентація «Практичний психолог у ЗЗСО на 2026/2027 н. р.»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1251" target="_blank" rel="noopener">Чек-лист практичного психолога 2026/2027</a></li>
         <li><a href="https://t.me/gobovaluzp/1289" target="_blank" rel="noopener">Посадова інструкція практичного психолога</a></li>
-        <li><a href="https://t.me/gobovaluzp/1320" target="_blank" rel="noopener">Приклад посадової інструкції соціального педагога</a></li>
-        <li><a href="https://t.me/gobovaluzp/1321" target="_blank" rel="noopener">Презентація «Навігатор професії: соціальний педагог»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1309" target="_blank" rel="noopener">Презентація «Практичний психолог у ЗЗСО на 2026/2027 н. р.»</a></li>
       </ul>
     </details>
     <details class="nav-cat">
       <summary>Планування <span class="nav-count">5</span></summary>
       <ul>
         <li><a href="https://t.me/gobovaluzp/1241" target="_blank" rel="noopener">Конспект для педради про правила роботи психолога</a></li>
-        <li><a href="https://t.me/gobovaluzp/1258" target="_blank" rel="noopener">Річний план практичного психолога</a></li>
         <li><a href="https://t.me/gobovaluzp/1245" target="_blank" rel="noopener">План роботи на вересень 2026</a></li>
+        <li><a href="https://t.me/gobovaluzp/1258" target="_blank" rel="noopener">Річний план практичного психолога</a></li>
         <li><a href="https://t.me/gobovaluzp/1268" target="_blank" rel="noopener">План роботи на жовтень</a></li>
         <li><a href="https://t.me/gobovaluzp/1301" target="_blank" rel="noopener">План роботи на листопад</a></li>
       </ul>
     </details>
     <details class="nav-cat">
-      <summary>Робота з батьками <span class="nav-count">3</span></summary>
+      <summary>Робота з батьками <span class="nav-count">6</span></summary>
       <ul>
         <li><a href="https://t.me/gobovaluzp/1233" target="_blank" rel="noopener">Форма інформованої згоди батьків</a></li>
         <li><a href="https://t.me/gobovaluzp/1259" target="_blank" rel="noopener">Виступ «Як допомогти дитині адаптуватися» для батьків 1-х класів</a></li>
-        <li><a href="https://t.me/gobovaluzp/1285" target="_blank" rel="noopener">Дві пам’ятки на одному аркуші — психологу й батькам: індивідуальні заняття з дітьми з ООП під час дистанційного навчання</a></li>
+        <li><a href="https://t.me/gobovaluzp/96" target="_blank" rel="noopener">Книга «Сценарії занять: Без ляпасу»</a></li>
+        <li><a href="https://t.me/gobovaluzp/97" target="_blank" rel="noopener">Плакат «10 кроків проти ляпасу» (PNG)</a></li>
+        <li><a href="https://t.me/gobovaluzp/106" target="_blank" rel="noopener">Постери від освітнього проєкту #НеБийДитину (PNG)</a></li>
+        <li><a href="https://t.me/gobovaluzp/146" target="_blank" rel="noopener">«Як стати щасливими батьками щасливих дітей?» — короткі підказки від #НеБийДитину</a></li>
       </ul>
     </details>
     <details class="nav-cat">
@@ -727,67 +734,150 @@
         <li><a href="https://t.me/gobovaluzp/1264" target="_blank" rel="noopener">Консультування педагогів за результатами спостереження</a></li>
         <li><a href="https://t.me/gobovaluzp/1271" target="_blank" rel="noopener">Консультація для педагогів і класних керівників: як реагувати на труднощі здобувачів освіти</a></li>
         <li><a href="https://t.me/gobovaluzp/1272" target="_blank" rel="noopener">Відео: як безпечно й ефективно підтримувати учнів у стресових ситуаціях</a></li>
-        <li><a href="https://t.me/gobovaluzp/1282" target="_blank" rel="noopener">Семінар для педагогів — Тиждень психічного здоров’я</a></li>
-        <li><a href="https://t.me/gobovaluzp/1283" target="_blank" rel="noopener">Презентація до семінару «Помітити. Відреагувати. Передати»</a></li>
+        <li><a href="https://docs.google.com/document/d/1h_uf78KXuP8PSlv9ULlLBhE_LebqPIkF/edit?usp=sharing" target="_blank" rel="noopener">Психолого-педагогічний семінар «Булінг у школі: причини, наслідки, допомога» (автор — Матус Р. І.)</a></li>
+        <li><a href="https://t.me/gobovaluzp/1149" target="_blank" rel="noopener">Вигорання наприкінці навчального року: діагностика MBI-ES для педагогів і обробник</a></li>
       </ul>
     </details>
     <details class="nav-cat">
-      <summary>Діагностика й документація <span class="nav-count">8</span></summary>
+      <summary>Діагностика й документація <span class="nav-count">12</span></summary>
       <ul>
-        <li><a href="https://t.me/gobovaluzp/1248" target="_blank" rel="noopener">Журнал обліку роботи практичного психолога</a></li>
+        <li><a href="https://t.me/gobovaluzp/25" target="_blank" rel="noopener">Пакет матеріалів «Сильні сторони характеру»: плакат, інфографіка, Google-форма, обробник, відеоінструкція</a></li>
         <li><a href="https://t.me/gobovaluzp/1246" target="_blank" rel="noopener">Бланк повідомлення для педагогів і психологів</a></li>
+        <li><a href="https://t.me/gobovaluzp/1248" target="_blank" rel="noopener">Журнал обліку роботи практичного психолога</a></li>
         <li><a href="https://t.me/gobovaluzp/1260" target="_blank" rel="noopener">Форма соціометричного дослідження</a></li>
         <li><a href="https://t.me/gobovaluzp/1263" target="_blank" rel="noopener">Шаблон обробника соціометрії</a></li>
-        <li><a href="https://t.me/gobovaluzp/1307" target="_blank" rel="noopener">Тест шкільної тривожності Філіпса: форма й обробник</a></li>
-        <li><a href="https://t.me/gobovaluzp/1300" target="_blank" rel="noopener">Проективна методика «Дерево»</a></li>
         <li><a href="https://t.me/gobovaluzp/1295" target="_blank" rel="noopener">Анкета для педагогічних працівників (додаток 11) до базового зрізу показника</a></li>
+        <li><a href="https://t.me/gobovaluzp/1300" target="_blank" rel="noopener">Проективна методика «Дерево»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1307" target="_blank" rel="noopener">Тест шкільної тривожності Філіпса: форма й обробник</a></li>
+        <li><a href="https://t.me/gobovaluzp/1319" target="_blank" rel="noopener">Обробник шкільної тривожності Філіпса: оновлена версія з рекомендаціями</a></li>
         <li><a href="https://t.me/gobovaluzp/1061" target="_blank" rel="noopener">Опитування: стрес перед контрольними</a></li>
+        <li><a href="https://t.me/gobovaluzp/1104" target="_blank" rel="noopener">Тиждень «Провал — це досвід»: опитування стійкості до невдач і обробник результатів</a></li>
+        <li><a href="https://t.me/gobovaluzp/1098" target="_blank" rel="noopener">Обробник результатів опитування до тижня «Провал — це досвід»</a></li>
       </ul>
     </details>
     <details class="nav-cat">
       <summary>Реагування на кризи <span class="nav-count">2</span></summary>
       <ul>
-        <li><a href="https://t.me/gobovaluzp/1242" target="_blank" rel="noopener">Оновлений порядок реагування на випадки насильства та булінгу</a></li>
+        <li><a href="https://t.me/gobovaluzp/1242" target="_blank" rel="noopener">Оновлений порядок реагування на насильство та булінг</a></li>
         <li><a href="https://t.me/gobovaluzp/1330" target="_blank" rel="noopener">Підбірка до акції «16 днів проти насильства» — 19 матеріалів</a></li>
       </ul>
     </details>
     <details class="nav-cat">
-      <summary>Заняття з дітьми <span class="nav-count">12</span></summary>
+      <summary>Заняття з дітьми <span class="nav-count">11</span></summary>
       <ul>
-        <li><a href="https://t.me/gobovaluzp/1261" target="_blank" rel="noopener">Конспект заняття до Міжнародного дня миру</a></li>
+        <li><a href="https://t.me/gobovaluzp/729" target="_blank" rel="noopener">Конспект заняття «Емоції та добрі справи: мандрівка з хмаринкою Тучкою» (з робочим аркушем і відеоказкою)</a></li>
+        <li><a href="https://t.me/gobovaluzp/1261" target="_blank" rel="noopener">Конспект до Міжнародного дня миру</a></li>
         <li><a href="https://t.me/gobovaluzp/1269" target="_blank" rel="noopener">Індивідуальне корекційно-розвивальне заняття, 1–3 клас</a></li>
         <li><a href="https://t.me/gobovaluzp/1270" target="_blank" rel="noopener">Індивідуальне корекційно-розвивальне заняття, 5–9 клас</a></li>
-        <li><a href="https://t.me/gobovaluzp/1284" target="_blank" rel="noopener">Конспект онлайн-заняття для дітей з ООП (1–4 класи)</a></li>
         <li><a href="https://t.me/gobovaluzp/1302" target="_blank" rel="noopener">Психоедукаційне заняття з емоційної саморегуляції, 2 клас</a></li>
         <li><a href="https://t.me/gobovaluzp/1303" target="_blank" rel="noopener">Психоедукаційне заняття з емоційної саморегуляції, 3 клас</a></li>
         <li><a href="https://t.me/gobovaluzp/1306" target="_blank" rel="noopener">Психоедукаційне заняття з емоційної саморегуляції, 4 клас</a></li>
-        <li><a href="https://t.me/gobovaluzp/1326" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 1–4 класи</a></li>
-        <li><a href="https://t.me/gobovaluzp/1327" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 5–7 класи</a></li>
-        <li><a href="https://t.me/gobovaluzp/1328" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 8–11 класи</a></li>
-        <li><a href="https://t.me/gobovaluzp/1098" target="_blank" rel="noopener">Провал — це досвід</a></li>
-        <li><a href="https://t.me/gobovaluzp/838" target="_blank" rel="noopener">«Мої ресурси»</a></li>
+        <li><a href="https://t.me/gobovaluzp/1326" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 1–4 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1327" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 5–7 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1328" target="_blank" rel="noopener">Конспект занять «Я і мої почуття», 8–11 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/838" target="_blank" rel="noopener">Баланс у моєму житті: конспект заняття, 8–11 клас</a></li>
       </ul>
     </details>
     <details class="nav-cat">
-      <summary>Тиждень психічного здоров’я <span class="nav-count">5</span></summary>
+      <summary>Для учнів: дружба, образа й повага <span class="nav-count">12</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/8" target="_blank" rel="noopener">Відеоінструкція для тих, хто планує проводити: інтерактивна презентація «Приятель чи кривдник»</a></li>
+        <li><a href="https://t.me/gobovaluzp/9" target="_blank" rel="noopener">Вправа «Приятель чи кривдник»</a></li>
+        <li><a href="https://t.me/gobovaluzp/61" target="_blank" rel="noopener">Плакати «Як дружити» (PNG)</a></li>
+        <li><a href="https://t.me/gobovaluzp/65" target="_blank" rel="noopener">Інтерактивна вправа «Види поведінки» (LearningApps)</a></li>
+        <li><a href="https://t.me/gobovaluzp/69" target="_blank" rel="noopener">Історія «Таємниця вчителя та двох яблук» (YouTube)</a></li>
+        <li><a href="https://t.me/gobovaluzp/75" target="_blank" rel="noopener">Історія «Таємничий лист вибачень» з питаннями (PNG)</a></li>
+        <li><a href="https://t.me/gobovaluzp/78" target="_blank" rel="noopener">Історія «Лабіринт образи» (PNG); питання до історії — в коментарі</a></li>
+        <li><a href="https://t.me/gobovaluzp/81" target="_blank" rel="noopener">Плакат «Фрази рішучості та поваги до думок інших»</a></li>
+        <li><a href="https://t.me/gobovaluzp/83" target="_blank" rel="noopener">«Вчимося жити поруч: толерантність і любов»</a></li>
+        <li><a href="https://t.me/gobovaluzp/724" target="_blank" rel="noopener">Гра «Інтернет-мандри: доброта і повага» (PDF — у коментарі)</a></li>
+        <li><a href="https://t.me/gobovaluzp/745" target="_blank" rel="noopener">Поради психологам до вправи «Конфлікти з друзями» (для підлітків)</a></li>
+        <li><a href="https://youtu.be/RMt3nZwQ9kQ" target="_blank" rel="noopener">Історія «Образа приходить раптово!» (YouTube)</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Інтерактивні вправи й ігри <span class="nav-count">5</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/15" target="_blank" rel="noopener">Гра-завдання «Море Надій» (PNG)</a></li>
+        <li><a href="https://t.me/gobovaluzp/21" target="_blank" rel="noopener">Інтерактивна вправа «Подорож по морю Надій» (презентація)</a></li>
+        <li><a href="https://t.me/gobovaluzp/23" target="_blank" rel="noopener">Інтерактивна вправа «Мої емоції та почуття» (LearningApps)</a></li>
+        <li><a href="https://t.me/gobovaluzp/47" target="_blank" rel="noopener">Казка «Подорож по морю Надій» (YouTube)</a></li>
+        <li><a href="https://t.me/gobovaluzp/650" target="_blank" rel="noopener">Відео: вступ до гри «Я знаю 5… Мої психологічні ресурси»</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Робочі аркуші (PNG, PDF) <span class="nav-count">10</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/4" target="_blank" rel="noopener">«Вчимося жити разом»</a></li>
+        <li><a href="https://t.me/gobovaluzp/17" target="_blank" rel="noopener">Прийом «3-2-1»: рефлексія в кінці уроку</a></li>
+        <li><a href="https://t.me/gobovaluzp/20" target="_blank" rel="noopener">«Я досягну своєї мети, коли…»</a></li>
+        <li><a href="https://t.me/gobovaluzp/22" target="_blank" rel="noopener">«Намалюй те, що ти відчуваєш»</a></li>
+        <li><a href="https://t.me/gobovaluzp/26" target="_blank" rel="noopener">Набір робочих аркушів «Емоційна регуляція»</a></li>
+        <li><a href="https://t.me/gobovaluzp/42" target="_blank" rel="noopener">Техніка «Історія в шести частинах»</a></li>
+        <li><a href="https://t.me/gobovaluzp/67" target="_blank" rel="noopener">«Емоційний квест» (PDF — у коментарі)</a></li>
+        <li><a href="https://t.me/gobovaluzp/124" target="_blank" rel="noopener">Робочий аркуш «Самоаналіз»</a></li>
+        <li><a href="https://t.me/gobovaluzp/731" target="_blank" rel="noopener">Робочий аркуш «Колесо життя» для підлітків (PDF — у коментарі)</a></li>
+        <li><a href="https://t.me/gobovaluzp/743" target="_blank" rel="noopener">Робочий аркуш «Делегування та відмова від непотрібних завдань» (PDF — у коментарі)</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Плакати й картки (PNG) <span class="nav-count">2</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/32" target="_blank" rel="noopener">Привітання-побажання учням</a></li>
+        <li><a href="https://t.me/gobovaluzp/48" target="_blank" rel="noopener">Плакати «Стратегії навчання»</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Опитування й голосування <span class="nav-count">2</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/7" target="_blank" rel="noopener">Голосування «Найзручніший портфель психолога»</a></li>
+        <li><a href="https://t.me/gobovaluzp/24" target="_blank" rel="noopener">Анонімне опитування «Чи випробуєте ви самі інтерактивні вправи, які розміщуються в нашому каналі?»</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Інструменти для психолога <span class="nav-count">2</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/13" target="_blank" rel="noopener">Веселі інструменти від Google (щоб побавитись)</a></li>
+        <li><a href="https://t.me/gobovaluzp/734" target="_blank" rel="noopener">Відео: як поєднати Google Форми й Таблиці, щоб відповіді зберігалися автоматично (YouTube)</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Діти з ООП <span class="nav-count">3</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1250" target="_blank" rel="noopener">Лист МОН № 1/18599-26 про організацію освітнього процесу для дітей з ООП</a></li>
+        <li><a href="https://t.me/gobovaluzp/1284" target="_blank" rel="noopener">Конспект онлайн-заняття для дітей з ООП, 1–4 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1285" target="_blank" rel="noopener">Дві пам’ятки на одному аркуші: психологу й батькам — про індивідуальні заняття з дітьми з ООП під час дистанційного навчання</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Тиждень психічного здоров’я <span class="nav-count">7</span></summary>
       <ul>
         <li><a href="https://t.me/gobovaluzp/1273" target="_blank" rel="noopener">Матеріали єдиної інформаційної хвилини</a></li>
         <li><a href="https://t.me/gobovaluzp/1274" target="_blank" rel="noopener">Комплект «Відкриття Тижня психічного здоров’я»</a></li>
         <li><a href="https://t.me/gobovaluzp/1276" target="_blank" rel="noopener">Групове адресне заняття, 3–4 клас</a></li>
         <li><a href="https://t.me/gobovaluzp/1277" target="_blank" rel="noopener">Групове адресне заняття, 5–8 клас</a></li>
         <li><a href="https://t.me/gobovaluzp/1278" target="_blank" rel="noopener">Групове заняття, 9–11 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1282" target="_blank" rel="noopener">Семінар для педагогів</a></li>
+        <li><a href="https://t.me/gobovaluzp/1283" target="_blank" rel="noopener">Презентація до семінару «Помітити. Відреагувати. Передати»</a></li>
       </ul>
     </details>
     <details class="nav-cat">
       <summary>Тиждень безпеки <span class="nav-count">7</span></summary>
       <ul>
         <li><a href="https://t.me/gobovaluzp/1286" target="_blank" rel="noopener">Відкриття Тижня безпеки: інструктаж і плакати</a></li>
-        <li><a href="https://t.me/gobovaluzp/1297" target="_blank" rel="noopener">Рекомендації до Тижня безпеки</a></li>
-        <li><a href="https://t.me/gobovaluzp/1287" target="_blank" rel="noopener">Заняття Тижня безпеки, 1–4 класи</a></li>
-        <li><a href="https://t.me/gobovaluzp/1291" target="_blank" rel="noopener">Заняття Тижня безпеки, 4–5 класи</a></li>
-        <li><a href="https://t.me/gobovaluzp/1292" target="_blank" rel="noopener">Заняття Тижня безпеки, 8–9 класи</a></li>
+        <li><a href="https://t.me/gobovaluzp/1287" target="_blank" rel="noopener">Заняття Тижня безпеки, 1–4 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1291" target="_blank" rel="noopener">Заняття Тижня безпеки, 4–5 клас</a></li>
+        <li><a href="https://t.me/gobovaluzp/1292" target="_blank" rel="noopener">Заняття Тижня безпеки, 8–9 клас</a></li>
         <li><a href="https://t.me/gobovaluzp/1293" target="_blank" rel="noopener">Два інтерактиви до Тижня безпеки</a></li>
         <li><a href="https://t.me/gobovaluzp/1294" target="_blank" rel="noopener">Шаблон довідки керівнику за підсумками Тижня безпечної поведінки в укритті</a></li>
+        <li><a href="https://t.me/gobovaluzp/1297" target="_blank" rel="noopener">Рекомендації до Тижня безпеки</a></li>
+      </ul>
+    </details>
+    <details class="nav-cat">
+      <summary>Соціальний педагог <span class="nav-count">2</span></summary>
+      <ul>
+        <li><a href="https://t.me/gobovaluzp/1320" target="_blank" rel="noopener">Приклад посадової інструкції соціального педагога</a></li>
+        <li><a href="https://t.me/gobovaluzp/1321" target="_blank" rel="noopener">Презентація «Навігатор професії: соціальний педагог»</a></li>
       </ul>
     </details>
   </div>
